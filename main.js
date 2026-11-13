@@ -1,5 +1,7 @@
 // Trabalho NP2 — fluxo principal.
 // Utilize as funções de pedidos.js e relatorios.js neste arquivo.
+import * as pedidos from 'pedidos.js'
+import * as relatorio from 'relatorio.js'
 
 function iniciarSistema() {
     let opcao = -1;
@@ -11,24 +13,24 @@ function iniciarSistema() {
 
         switch(opcao){
             case 1:
-                cadastrarPedido();
+                pedidos.cadastrarPedido();
                 break
             case 2:
-                listarPedidos();
+                pedidos.listarPedidos();
                 break
             case 3:
                 codigo = (prompt("digite o código do pedido:"));
-                buscarPedido(codigo);
+                pedidos.buscarPedido(codigo);
                 break
             case 4:
                 codigo = prompt("digite o código do pedido:");
-                entregarPedido(codigo);
+                pedidos.entregarPedido(codigo);
                 break
             case 5:
-                exibirResumo();
+                relatorio.exibirResumo();
                 break
             case 6:
-                gerarResumoJSON();
+                relatorio.gerarResumoJSON();
                 break
             case 0:
                 break
