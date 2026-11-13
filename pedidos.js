@@ -5,6 +5,10 @@ let pedidos = [
     { codigo: 103, cliente: "Carla", valor: 32.90, entregue: false }
 ];
 
+for(pedido of pedidos){
+    console.log(pedido.codigo)
+}
+
 // Implemente abaixo as operações de gerenciamento dos pedidos.
 function cadastrarPedido() {
     // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
@@ -20,35 +24,44 @@ function cadastrarPedido() {
     //Validação
     if(valor_add < 0){
         console.log("Valor digitado não está no padrão")
+    }
         if(entregue_add.toUpperCase() != "S"|| entregue_add.toUpperCase() != "N"){
         console.log("Opção digitada não está no padrão")
     }else{
     //Adicionando ao array
-        novo_pedido = {codigo: pedidos.codigo-1, cliente: cliente_add, valor: valor_add, entregue: entregue_add}
-        pedidos = novo_pedido
-    }
-    }
+        novo_pedido = {codigo: pedidos[-1].codigo+1, cliente: cliente_add, valor: valor_add, entregue: entregue_add}
+        pedidos.push(novo_pedido)
+        
     }
     console.log(novo_pedido)
+    }
+    
     console.log(pedidos)
     
 
 
 function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
-    for(pedido of pedidos){
+    for(let pedido of pedidos){
         console.log(pedido)
     }
 }
 
-function buscarPedido(codigo) {
+function buscarPedido() {
     // TODO: retornar o pedido correspondente ao código, se existir.
-    let pedido_selecionado = prompt("Digite o código do pedido")
-    for(pedido of pedidos){
+    let pedido_selecionado = Number(prompt("Digite o código do pedido"))
 
+    for(let pedido of pedidos){
+        if(pedido.codigo == pedido_selecionado){
+            console.log(pedido)
+        }
     }
 }
 
-function entregarPedido(codigo) {
+function entregarPedido() {
     // TODO: alterar a situação de entrega do pedido encontrado.
+    let pedido_selecionado2 = prompt("Digite o código do pedido")
+    for(pedido of pedidos){
+        pedido.entregue = true 
+    }
 }
