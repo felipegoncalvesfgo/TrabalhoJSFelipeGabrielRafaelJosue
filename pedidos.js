@@ -10,6 +10,8 @@ function cadastrarPedido() {
     // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
     //Solicitação de Dados
     
+    console.log("Função chamada")
+
     let novo_pedido = {}
     let cliente_add = prompt("Digite o nome do Cliente")
     let valor_add = Number(prompt("Digite o valor do pedido"))
@@ -18,7 +20,7 @@ function cadastrarPedido() {
     //Validação
     if(valor_add < 0){
         console.log("Valor digitado não está no padrão")
-        if(entregue_add != 0 || entregue_add != 1){
+        if(entregue_add.toUpperCase() != "S"|| entregue_add.toUpperCase() != "N"){
         console.log("Opção digitada não está no padrão")
     }else{
     //Adicionando ao array
@@ -27,16 +29,24 @@ function cadastrarPedido() {
     }
     }
     }
+    console.log(novo_pedido)
     console.log(pedidos)
     
 
 
 function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
+    for(pedido of pedidos){
+        console.log(pedido)
+    }
 }
 
 function buscarPedido(codigo) {
     // TODO: retornar o pedido correspondente ao código, se existir.
+    let pedido_selecionado = prompt("Digite o código do pedido")
+    for(pedido of pedidos){
+
+    }
 }
 
 function entregarPedido(codigo) {
