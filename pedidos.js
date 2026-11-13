@@ -10,7 +10,7 @@ for(let pedido of pedidos){
 }
 
 // Implemente abaixo as operações de gerenciamento dos pedidos.
-function cadastrarPedido() {
+export function cadastrarPedido() {
     // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
     //Solicitação de Dados
     
@@ -25,14 +25,14 @@ function cadastrarPedido() {
     if(valor_add < 0){
         console.log("Valor digitado não está no padrão")
     }
-        if(entregue_add.toUpperCase() != "S"|| entregue_add.toUpperCase() != "N"){
+        if(entregue_add.toUpperCase() != "S" && entregue_add.toUpperCase() != "N"){
         console.log("Opção digitada não está no padrão")
     }else{
     //Adicionando ao array
     if(entregue_add.toUpperCase() === "S"){
         entregue_add = true
     }else{entregue_add = false}
-        novo_pedido = {codigo: pedidos[-1].codigo+1, cliente: cliente_add, valor: valor_add, entregue: entregue_add}
+        novo_pedido = {codigo: pedidos[pedidos.length-1].codigo+1, cliente: cliente_add, valor: valor_add, entregue: entregue_add}
         pedidos.push(novo_pedido)
         
     }
@@ -43,7 +43,7 @@ function cadastrarPedido() {
     
 
 
-function listarPedidos() {
+export function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
     console.log("Listagem de pedido Iniciado")
     for(let pedido of pedidos){
@@ -51,7 +51,7 @@ function listarPedidos() {
     }
 }
 
-function buscarPedido(codigo) {
+export function buscarPedido(codigo) {
     // TODO: retornar o pedido correspondente ao código, se existir.
  // teste   let pedido_selecionado = Number(prompt("Digite o código do pedido"))
 
@@ -63,7 +63,7 @@ function buscarPedido(codigo) {
     }
 }
 
-function entregarPedido(codigo) {
+export function entregarPedido(codigo) {
     // TODO: alterar a situação de entrega do pedido encontrado.
    //teste let pedido_selecionado2 = prompt("Digite o código do pedido")
    console.log("Entrega de pedido Iniciado")
