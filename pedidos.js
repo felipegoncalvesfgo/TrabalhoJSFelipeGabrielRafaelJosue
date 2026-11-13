@@ -5,7 +5,7 @@ let pedidos = [
     { codigo: 103, cliente: "Carla", valor: 32.90, entregue: false }
 ];
 
-for(pedido of pedidos){
+for(let pedido of pedidos){
     console.log(pedido.codigo)
 }
 
