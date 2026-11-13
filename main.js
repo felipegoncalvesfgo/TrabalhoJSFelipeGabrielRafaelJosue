@@ -1,7 +1,7 @@
 // Trabalho NP2 — fluxo principal.
 // Utilize as funções de pedidos.js e relatorios.js neste arquivo.
-import * as pedidos from 'pedidos.js'
-import * as relatorio from 'relatorio.js'
+import * as pedidos from './pedidos.js';
+import * as relatorio from './relatorio.js';
 
 function iniciarSistema() {
     let opcao = -1;
