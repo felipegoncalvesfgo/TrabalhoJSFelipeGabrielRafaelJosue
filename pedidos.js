@@ -14,7 +14,7 @@ function cadastrarPedido() {
     // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
     //Solicitação de Dados
     
-    console.log("Função chamada")
+    console.log("Cadastro de pedido Iniciado")
 
     let novo_pedido = {}
     let cliente_add = prompt("Digite o nome do Cliente")
@@ -45,26 +45,31 @@ function cadastrarPedido() {
 
 function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
+    console.log("Listagem de pedido Iniciado")
     for(let pedido of pedidos){
         console.log(pedido)
     }
 }
 
-function buscarPedido() {
+function buscarPedido(codigo) {
     // TODO: retornar o pedido correspondente ao código, se existir.
-    let pedido_selecionado = Number(prompt("Digite o código do pedido"))
+ // teste   let pedido_selecionado = Number(prompt("Digite o código do pedido"))
 
+    console.log("Buscar pedido Iniciado")
     for(let pedido of pedidos){
-        if(pedido.codigo == pedido_selecionado){
+        if(pedido.codigo == codigo){
             console.log(pedido)
         }
     }
 }
 
-function entregarPedido() {
+function entregarPedido(codigo) {
     // TODO: alterar a situação de entrega do pedido encontrado.
-    let pedido_selecionado2 = prompt("Digite o código do pedido")
+   //teste let pedido_selecionado2 = prompt("Digite o código do pedido")
+   console.log("Entrega de pedido Iniciado")
     for(pedido of pedidos){
-        pedido.entregue = true 
+        if(pedido.codigo === codigo){
+            pedido.entregue = true
+        }
     }
 }
