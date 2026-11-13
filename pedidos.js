@@ -29,6 +29,9 @@ function cadastrarPedido() {
         console.log("Opção digitada não está no padrão")
     }else{
     //Adicionando ao array
+    if(entregue_add.toUpperCase() === "S"){
+        entregue_add = true
+    }else{entregue_add = false}
         novo_pedido = {codigo: pedidos[-1].codigo+1, cliente: cliente_add, valor: valor_add, entregue: entregue_add}
         pedidos.push(novo_pedido)
         
