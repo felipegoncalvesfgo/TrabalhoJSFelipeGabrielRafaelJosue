@@ -16,7 +16,7 @@ export function cadastrarPedido() {
     
     console.log("Cadastro de pedido Iniciado")
 
-    let novo_pedido = {}
+    let novo_pedido = []
     let cliente_add = prompt("Digite o nome do Cliente")
     let valor_add = Number(prompt("Digite o valor do pedido"))
     let entregue_add = prompt("Pedido entregue? S/N?")
@@ -51,9 +51,11 @@ export function listarPedidos() {
     }
 }
 
+function buscarPedido(codigo, pedido) {
 export function buscarPedido(codigo) {
     // TODO: retornar o pedido correspondente ao código, se existir.
- // teste   let pedido_selecionado = Number(prompt("Digite o código do pedido"))
+    let pedido_selecionado = prompt("Digite o código do pedido: ")
+    for(pedido of pedidos){
 
     console.log("Buscar pedido Iniciado")
     for(let pedido of pedidos){
