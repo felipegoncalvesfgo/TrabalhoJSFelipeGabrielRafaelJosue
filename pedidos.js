@@ -5,12 +5,8 @@ let pedidos = [
     { codigo: 103, cliente: "Carla", valor: 32.90, entregue: false }
 ];
 
-for(let pedido of pedidos){
-    console.log(pedido.codigo)
-}
-
 // Implemente abaixo as operações de gerenciamento dos pedidos.
-export function cadastrarPedido() {
+function cadastrarPedido() {
     // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
     //Solicitação de Dados
     
@@ -37,13 +33,13 @@ export function cadastrarPedido() {
         
     }
     console.log(novo_pedido)
-    }
+}
     
-    console.log(pedidos)
+
     
 
 
-export function listarPedidos() {
+function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
     console.log("Listagem de pedido Iniciado")
     for(let pedido of pedidos){
@@ -51,25 +47,26 @@ export function listarPedidos() {
     }
 }
 
-function buscarPedido(codigo, pedido) {
-export function buscarPedido(codigo) {
-    // TODO: retornar o pedido correspondente ao código, se existir.
-    let pedido_selecionado = prompt("Digite o código do pedido: ")
-    for(pedido of pedidos){
 
+function buscarPedido(codigo) {
+    // TODO: retornar o pedido correspondente ao código, se existir.
     console.log("Buscar pedido Iniciado")
     for(let pedido of pedidos){
         if(pedido.codigo == codigo){
             console.log(pedido)
         }
     }
+    return pedidos
 }
 
-export function entregarPedido(codigo) {
+
+
+
+function entregarPedido(codigo) {
     // TODO: alterar a situação de entrega do pedido encontrado.
    //teste let pedido_selecionado2 = prompt("Digite o código do pedido")
    console.log("Entrega de pedido Iniciado")
-    for(pedido of pedidos){
+    for(let pedido of pedidos){
         if(pedido.codigo === codigo){
             pedido.entregue = true
         }
